@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<script type="text/javascript">
+		function check()
+		{
+			var name=document.getElementById("name").value;
+			var pass=document.getElementById("pass").value;
+			if(name=="")
+			{
+				alert("User Name should not be empty");
+			}
+			if(pass=="")
+			{
+				alert("password should not be empty");
+			}
+			var XHObj;
+			if(window.XMLHttpRequest)
+			{
+				XHObj = new XMLHttpRequest();
+			}
+			else
+			{
+				XHObj=new ActiveXObject("Mcrosoft.XMLHTTP");
+			}
+			XHObj.open("POST","home.php?v1="+n1+"&v2="+n2,true);
+			XHObj.onreadystatechange=function()
+			{
+				if(XHObj.readyState==4 && XHObj.status==200)
+				{
+					document.getElementById("div").innerHTML=XHObj.responseText;
+				}
+			}
+			XHObj.send();
+		}
+	</script>
+</head>
+<body>
+<pre>
+	<form method="POST"  onsubmit="check()">
+		Enter User Name<input type="text" id="name" name="n1">
+		Password       <input type="password" id="pass" name="n2">
+		sum            <input type="text" id="div">
+		<input type="submit" value="login">
+	</form>
+</pre>
+</body>
+</html>

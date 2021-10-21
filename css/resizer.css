@@ -1,0 +1,15 @@
+.zoom
+{
+background-image: url(../../img--9.jpg);
+text-align: center;
+padding :50px; 
+transition : transform  .2s ;
+ background-size: cover; 
+ display:inline-block;
+  height: 400px; 
+  width: 100%;
+}
+.zoom:hover
+{
+	transform: scale(1.5);
+}
